@@ -115,6 +115,10 @@ body {
   transition: color 0.3s ease, transform 0.3s ease;
   text-decoration: none;
   color: #000;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px;
 }
 .app .app__navbar .app__menu .app__menu-item:hover {
   color: #189b5c;
@@ -389,13 +393,9 @@ body {
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(24, 155, 92, 0.3764705882);
     width: 100%;
-    padding: 10px 20px;
+    padding: 0px 20px;
     margin: 12px 0;
     transition: transform 0.3s ease, color 0.3s ease;
-  }
-  body .app .app__navbar .app__menu .app__menu-item:hover {
-    color: #189b5c;
-    transform: translateX(2px);
   }
   body .app .app__hero {
     padding: 259px 15px 194px 15px;
