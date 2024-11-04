@@ -66,7 +66,7 @@ const App = () => {
   const handleScroll = () => {
     const navbar = document.querySelector('.app__navbar');
     
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 767) {
       if (window.scrollY > 50) {
         navbar.style.opacity = '0.9';
         navbar.style.transition = 'opacity 0.3s ease';
