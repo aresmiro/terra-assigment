@@ -272,13 +272,16 @@ body {
           line-height: normal;
           color: white;
         }
+
         .app__post-type-a {
           background-color: #f78bd8;
         }
         .app__post-type-b {
           background-color: #189b5c;
         }
-
+        .app__post-image {
+          object-fit: cover;
+        }
         .app__post-info {
           display: flex;
           padding-bottom: 8px;

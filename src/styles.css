@@ -260,6 +260,9 @@ body {
 .app .app__posts-container .app__posts .app__post .app__post-type-b {
   background-color: #189b5c;
 }
+.app .app__posts-container .app__posts .app__post .app__post-image {
+  object-fit: cover;
+}
 .app .app__posts-container .app__posts .app__post .app__post-info {
   display: flex;
   padding-bottom: 8px;
