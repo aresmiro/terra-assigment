@@ -131,8 +131,8 @@ const App = () => {
             {buttonLabel}
           </a>
 
-          <img className="app__hero-shape-1" src={data.hero.shapes.shape_1} />
-          <img className="app__hero-shape-2" src={data.hero.shapes.shape_2} />
+          <img className="app__hero-shape-1" alt='Line shape one' src={data.hero.shapes.shape_1} />
+          <img className="app__hero-shape-2" alt='Line shape two' src={data.hero.shapes.shape_2} />
         </div>
       </div>
 
