@@ -20,7 +20,10 @@ const App = () => {
           throw new Error('Network response was not ok');
         }
         const result = await response.json();
-        setData(result);
+
+        const { cta, ...filteredData } = result;
+      
+        setData(filteredData);
 
         const hasVisited = localStorage.getItem('hasVisited');
         if (!hasVisited) {
