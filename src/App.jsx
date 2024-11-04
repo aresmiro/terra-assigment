@@ -8,6 +8,10 @@ const App = () => {
 
   const apiUrl = 'https://tf-frontend.netlify.app/trial';
 
+  const formatUrl = (url) => {
+    return url.startsWith('http://') || url.startsWith('https://') ? url : `https://${url}`;
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -101,21 +105,21 @@ const App = () => {
         <img className="app__logo" src={data.navbar.logo} alt="Logo" />
         <button className="app__hamburger" onClick={toggleMenu}>
           {!isMenuOpen ? (
-            <>
+            <div aria-label="Toggle menu">
               <span className="app__bar"></span>
               <span className="app__bar"></span>
               <span className="app__bar"></span>
-            </>
+            </div>
           ) : (
-            <svg className="app__close-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="app__close-icon" aria-label="Close menu" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M18 6L6 18M6 6L18 18" strokeWidth="2" strokeLinecap="round" />
             </svg>
           )}
         </button>
         <div className={`app__menu ${isMenuOpen ? 'active' : ''}`}>
-          <a href='#' className="app__menu-item">{data.navbar.menu.menu_item_1}</a>
-          <a href='#' className="app__menu-item">{data.navbar.menu.menu_item_2}</a>
-          <a href='#' className="app__menu-item">{data.navbar.menu.menu_item_3}</a>
+          <a href="#" className="app__menu-item">{data.navbar.menu.menu_item_1}</a>
+          <a href="#" className="app__menu-item">{data.navbar.menu.menu_item_2}</a>
+          <a href="#" className="app__menu-item">{data.navbar.menu.menu_item_3}</a>
         </div>
       </nav>
 
@@ -123,9 +127,10 @@ const App = () => {
         <div className="app__hero-content">
           <h1 className="app__hero-title">{isFirstVisit ? data.hero.title.first_time_accessing : data.hero.title.second_time_accessing}</h1>
           <p className="app__hero-subtitle">{data.hero.subtitle}</p>
-          <a className={buttonClass} href={data.hero.button_link}>
+          <a className={buttonClass} href={formatUrl(data.hero.button_link)} target="_blank" rel="noopener noreferrer">
             {buttonLabel}
           </a>
+
           <img className="app__hero-shape-1" src={data.hero.shapes.shape_1} />
           <img className="app__hero-shape-2" src={data.hero.shapes.shape_2} />
         </div>
@@ -136,7 +141,6 @@ const App = () => {
         <div className="app__posts">
           {Object.values(data.body.posts).map((post, index) => (
             <div className="app__post" key={index}>
-              
               <img className="app__post-image" src={post.image} alt={post.title} />
               <p className={`app__post-type ${post.type === 'Type A' ? 'app__post-type-a' : 'app__post-type-b'}`}>{post.type}</p>
               <p className="app__post-info">{post.date}</p>
@@ -144,9 +148,9 @@ const App = () => {
             </div>
           ))}
         </div>
-        <a className="app__button" href={data.body.button_link}>
-          {data.body.button_label}
-        </a>
+       <a className="app__button" href={formatUrl(data.body.button_link)} target="_blank" rel="noopener noreferrer">
+        {data.body.button_label}
+      </a>
       </div>
     </div>
   );
